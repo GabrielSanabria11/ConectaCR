@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecable - Promociones Exclusivas Black Friday</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telecable: {
+                            red: '#E30613',
+                            purple: '#6B2B82',
+                            yellow: '#FFCC00',
+                            darkPurple: '#4A1B5C',
+                            dark: '#0B0F19',
+                            cardDark: '#161F30'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-short': 'bounce 1s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-telecable {
+            background: linear-gradient(135deg, #E30613 0%, #6B2B82 100%);
+        }
+        .gradient-yellow {
+            background: linear-gradient(135deg, #FFCC00 0%, #FFA500 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(227, 6, 19, 0.4);
+        }
+        .yellow-glow {
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-telecable-yellow selection:text-black min-h-screen flex flex-col">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-telecable-yellow text-black py-2 px-4 text-center font-bold text-xs sm:text-sm flex justify-center items-center gap-2">
+        <i class="fa-solid fa-bolt text-telecable-red animate-bounce"></i>
+        <span>¡OFERTA BLACK FRIDAY! <strong>+150 MB Adicionales gratis</strong> en todos los planes hasta el 24 de Noviembre.</span>
+        <i class="fa-solid fa-bolt text-telecable-red animate-bounce"></i>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="flex items-center gap-2 text-2xl sm:text-3xl font-extrabold italic tracking-wider">
+                    <span class="text-white">Tele</span><span class="text-telecable-red">cable</span>
+                </a>
+                <span class="hidden sm:inline-block h-6 w-px bg-gray-700"></span>
+                <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-gray-400 font-semibold">Tu Vida Fluye</span>
+            </div>
+
+            <!-- Nav Links & Toggle Mode -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                    <a href="#combos" class="hover:text-telecable-yellow transition-colors">Internet + TV</a>
+                    <a href="#apps" class="hover:text-telecable-yellow transition-colors">Apps Gratis</a>
+                    <a href="#solo-internet" class="hover:text-telecable-yellow transition-colors">Solo Internet</a>
+                </nav>
+
+                <!-- Admin Simulator Toggle Button -->
+            
+
+                <!-- Direct Sales WhatsApp CTA -->
+                <a href="https://wa.me/50680000000?text=Hola,%20quiero%20más%20información%20sobre%20las%20promociones%20de%20Telecable" 
+                   target="_blank" 
+                   class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg shadow-emerald-500/20 transition-all transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="hidden xs:inline">Ventas Directas</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ADMIN VIEW PANEL (Simulating admin.html within single file architecture) -->
+    <div id="adminPanel" class="hidden bg-gray-900 border-b border-telecable-purple/40 py-8 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-900/50 text-purple-300 text-xs font-bold rounded-full mb-2">
+                        <i class="fa-solid fa-user-gear"></i> Panel de Administración (admin.html)
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Plantillas de Mensajes WhatsApp para Ventas</h2>
+                    <p class="text-gray-400 text-sm">Gestiona y copia rápidamente las plantillas prediseñadas para enviar a los clientes prospectos.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="copyAllTemplates()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold px-4 py-2 rounded-lg border border-gray-700 flex items-center gap-2">
+                        <i class="fa-solid fa-copy"></i> Copiar Todo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Templates Grid -->
+            <div class="grid md:grid-cols-3 gap-4">
+                <!-- Template 1 -->
+                <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-telecable-yellow bg-telecable-yellow/10 px-2 py-1 rounded">Promo Black Friday</span>
+                            <span class="text-xs text-gray-500">Combo TV</span>
+                        </div>
+                        <p id="tpl1" class="text-xs text-gray-300 font-mono bg-gray-900/80 p-3 rounded-lg border border-gray-800 whitespace-pre-line">🔥 *¡OFERTA EXCLUSIVA BLACK FRIDAY TELECABLE!* 🔥
+
+¡Contrata hoy tu plan *ESTÁNDAR 300 Mbps + TV* por solo *₡29.990/mes*!
+
+🎁 *Beneficios incluidos:*
+🚀 **+150 MB ADICIONALES GRATIS**
+📺 Televisión Digital HD
+⚽ Tu App Favorita GRATIS (TDMAX o ViX Premium)
+
+¿Deseas verificar cobertura en tu zona ahora mismo?</p>
+                    </div>
+                    <button onclick="copyToClipboard('tpl1')" class="mt-4 w-full py-2 bg-telecable-purple/40 hover:bg-telecable-purple text-purple-200 text-xs font-bold rounded-lg border border-telecable-purple/50 flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-solid fa-clipboard"></i> Copiar Plantilla 1
+                    </button>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Solo Internet</span>
+                            <span class="text-xs text-gray-500">Alta Velocidad</span>
+                        </div>
+                        <p id="tpl2" class="text-xs text-gray-300 font-mono bg-gray-900/80 p-3 rounded-lg border border-gray-800 whitespace-pre-line">⚡ *INTERNET FIBRA ÓPTICA TELECABLE* ⚡
+
+Disfruta de la mejor velocidad para gaming y streaming:
+
+🌐 *Plan Avanzado 750 Mbps:* ₡31.990/mes (Incluye Extensor Wi-Fi gratis)
+🌐 *Plan Experto 1000 Mbps:* ₡39.990/mes (Incluye eero 6+ Mesh)
+
+✨ *Instalación rápida disponible.*
+¿Te gustaría consultar disponibilidad?</p>
+                    </div>
+                    <button onclick="copyToClipboard('tpl2')" class="mt-4 w-full py-2 bg-telecable-purple/40 hover:bg-telecable-purple text-purple-200 text-xs font-bold rounded-lg border border-telecable-purple/50 flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-solid fa-clipboard"></i> Copiar Plantilla 2
+                    </button>
+                </div>
+
+                <!-- Template 3 -->
+                <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-sky-400 bg-sky-400/10 px-2 py-1 rounded">Fútbol & Deportes</span>
+                            <span class="text-xs text-gray-500">TDMAX / ViX</span>
+                        </div>
+                        <p id="tpl3" class="text-xs text-gray-300 font-mono bg-gray-900/80 p-3 rounded-lg border border-gray-800 whitespace-pre-line">⚽ *VIVÍ EL FÚTBOL CON TELECABLE* ⚽
+
+Contrata tu paquete de Internet + TV y elige tu plataforma favorita **SIN COSTO ADICIONAL**:
+📲 **TDMAX** o **ViX Premium**
+
+Disfruta los partidos de la Liga Nacional, Premier League y más en HD.
+¿Deseas activar tu paquete hoy?</p>
+                    </div>
+                    <button onclick="copyToClipboard('tpl3')" class="mt-4 w-full py-2 bg-telecable-purple/40 hover:bg-telecable-purple text-purple-200 text-xs font-bold rounded-lg border border-telecable-purple/50 flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-solid fa-clipboard"></i> Copiar Plantilla 3
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-br from-telecable-red via-telecable-purple to-gray-950">
+        <!-- Decorative Glow Blur -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-telecable-red/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-telecable-purple/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text & Countdown -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-telecable-yellow text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 yellow-glow">
+                        <i class="fa-solid fa-fire text-telecable-red"></i> BLACK FRIDAY EXCLUSIVO
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-black text-white leading-none tracking-tight mb-4">
+                        APROVECHÁ ESTA PROMOCIÓN <br class="hidden sm:inline">
+                        <span class="text-telecable-yellow drop-shadow-md">POR TIEMPO LIMITADO</span>
+                    </h1>
+
+                    <div class="my-6 inline-block bg-telecable-purple/80 backdrop-blur-md border border-purple-400/30 p-4 sm:p-6 rounded-2xl shadow-2xl">
+                        <div class="text-3xl sm:text-5xl font-black text-white tracking-wide flex items-center justify-center lg:justify-start gap-3">
+                            <span class="text-telecable-yellow font-extrabold">+150 MB</span>
+                            <span class="text-2xl sm:text-4xl">ADICIONALES</span>
+                        </div>
+                        <p class="text-purple-200 text-xs sm:text-sm mt-1 font-semibold">Incluidos en todos los planes estándar, ideal y avanzado de Internet + TV</p>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="mt-4 mb-8">
+                        <p class="text-xs uppercase tracking-widest text-gray-300 font-bold mb-3">La oferta finaliza en:</p>
+                        <div class="flex justify-center lg:justify-start gap-3 text-center">
+                            <div class="bg-black/60 border border-gray-700 px-4 py-2 rounded-xl min-w-[70px]">
+                                <span id="days" class="text-2xl font-extrabold text-telecable-yellow">18</span>
+                                <span class="block text-[10px] text-gray-400 uppercase font-bold">Días</span>
+                            </div>
+                            <div class="bg-black/60 border border-gray-700 px-4 py-2 rounded-xl min-w-[70px]">
+                                <span id="hours" class="text-2xl font-extrabold text-white">12</span>
+                                <span class="block text-[10px] text-gray-400 uppercase font-bold">Horas</span>
+                            </div>
+                            <div class="bg-black/60 border border-gray-700 px-4 py-2 rounded-xl min-w-[70px]">
+                                <span id="minutes" class="text-2xl font-extrabold text-white">45</span>
+                                <span class="block text-[10px] text-gray-400 uppercase font-bold">Min</span>
+                            </div>
+                            <div class="bg-black/60 border border-gray-700 px-4 py-2 rounded-xl min-w-[70px]">
+                                <span id="seconds" class="text-2xl font-extrabold text-telecable-red">30</span>
+                                <span class="block text-[10px] text-gray-400 uppercase font-bold">Seg</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Hero CTA Button -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/50680000000?text=Hola,%20quiero%20aprovechar%20la%20promoción%20de%20Black%20Friday%20de%20150MB%20adicionales" 
+                           target="_blank" 
+                           class="bg-telecable-red hover:bg-red-700 text-white font-extrabold text-lg px-8 py-4 rounded-full shadow-lg neon-glow flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            SOLICITAR PROMOCIÓN HOY
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Feature Box Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-gray-900/90 rounded-3xl p-6 sm:p-8 border border-gray-800 shadow-2xl">
+                        <div class="absolute -top-4 -right-4 bg-telecable-yellow text-black font-black text-xs px-4 py-2 rounded-full uppercase tracking-wider shadow-md">
+                            ¡Promoción Válida!
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-days text-telecable-red"></i> Del 1 al 24 de Noviembre 2026
+                        </h3>
+                        <ul class="space-y-4 text-sm text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-500/20 text-emerald-400 p-1.5 rounded-full"><i class="fa-solid fa-check"></i></span>
+                                <span><strong>Internet Ultrafast:</strong> Hasta 1000 Mbps en Fibra Óptica.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-500/20 text-emerald-400 p-1.5 rounded-full"><i class="fa-solid fa-check"></i></span>
+                                <span><strong>TV Digital HD:</strong> Entretenimiento para toda la familia.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-500/20 text-emerald-400 p-1.5 rounded-full"><i class="fa-solid fa-check"></i></span>
+                                <span><strong>Streaming Incluido:</strong> TDMAX o ViX Premium gratis.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-500/20 text-emerald-400 p-1.5 rounded-full"><i class="fa-solid fa-check"></i></span>
+                                <span><strong>Equipos Mesh:</strong> Cobertura Wi-Fi total en tu hogar.</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-6 border-t border-gray-800 text-center">
+                            <span class="text-xs text-gray-400 block mb-2">¿Tienes dudas de cobertura?</span>
+                            <a href="https://wa.me/50680000000?text=Hola,%20me%20gustaría%20consultar%20cobertura%20para%20mi%20zona" 
+                               target="_blank" 
+                               class="text-telecable-yellow hover:underline text-sm font-bold inline-flex items-center gap-1">
+                                Consultar Disponibilidad por WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES INTERNET + TV (COMBOS TRÍO & DÚO) -->
+    <section id="combos" class="py-20 bg-gray-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-telecable-red font-extrabold text-xs uppercase tracking-widest bg-red-950/50 px-3 py-1 rounded-full border border-red-900/50">Planes Combos Exclusivos</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">Combos Internet + TV</h2>
+                <p class="text-gray-400 text-base">Todos los paquetes incluyen la súper promoción de <strong>+150 MB Adicionales</strong> por Black Friday.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan Estándar -->
+                <div class="bg-gray-900/80 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition-all hover:shadow-xl group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Plan Estándar</span>
+                            <span class="bg-telecable-yellow/20 text-telecable-yellow font-extrabold text-[10px] px-2.5 py-1 rounded-full">+150 MB GRATIS</span>
+                        </div>
+                        <div class="mb-6">
+                            <div class="text-4xl font-black text-white group-hover:text-telecable-yellow transition-colors">300 <span class="text-xl font-bold text-gray-400">Mbps</span></div>
+                            <div class="text-sm text-telecable-red font-extrabold mt-1">+ TELEVISIÓN DIGITAL HD</div>
+                        </div>
+                        <div class="py-4 border-y border-gray-800 mb-6">
+                            <span class="text-xs text-gray-400 block">Precio Especial / mes</span>
+                            <div class="text-3xl font-black text-white">₡29.990 <span class="text-xs font-normal text-gray-400">i.i.</span></div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> Velocidad: 150MB + 150MB extra</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> TV Digital Canales HD</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> App Gratis a elegir (TDMAX / ViX)</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> Módem Wi-Fi de alta potencia</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20contratar%20el%20Plan%20Estándar%20300Mbps%20%2B%20TV%20por%20₡29.990" 
+                       target="_blank" 
+                       class="w-full py-3.5 px-6 rounded-2xl bg-gray-800 hover:bg-telecable-red text-white font-bold text-center transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Contratar Plan Estándar
+                    </a>
+                </div>
+
+                <!-- Plan Ideal (DESTACADO / RECOMENDADO) -->
+                <div class="relative bg-gradient-to-b from-telecable-purple/40 to-gray-900 rounded-3xl p-8 border-2 border-telecable-yellow flex flex-col justify-between shadow-2xl yellow-glow transform md:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-telecable-yellow text-black font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
+                        ★ MÁS POPULAR & RECOMENDADO
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <span class="text-xs font-bold text-telecable-yellow uppercase tracking-widest">Plan Ideal</span>
+                            <span class="bg-telecable-yellow text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full">+150 MB GRATIS</span>
+                        </div>
+                        <div class="mb-6">
+                            <div class="text-5xl font-black text-white">500 <span class="text-xl font-bold text-gray-300">Mbps</span></div>
+                            <div class="text-sm text-telecable-yellow font-extrabold mt-1">+ TELEVISIÓN DIGITAL HD</div>
+                        </div>
+                        <div class="py-4 border-y border-purple-500/30 mb-6">
+                            <span class="text-xs text-gray-300 block">Precio Especial / mes</span>
+                            <div class="text-4xl font-black text-white">₡33.990 <span class="text-xs font-normal text-gray-300">i.i.</span></div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-200 mb-8">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-telecable-yellow"></i> Velocidad: 350MB + 150MB extra</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-telecable-yellow"></i> TV Digital Canales HD Completos</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-telecable-yellow"></i> App Gratis Incluida (TDMAX / ViX)</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-telecable-yellow"></i> Ideal para Streaming 4K simultáneo</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20contratar%20el%20Plan%20IDEAL%20500Mbps%20%2B%20TV%20por%20₡33.990" 
+                       target="_blank" 
+                       class="w-full py-4 px-6 rounded-2xl bg-telecable-yellow hover:bg-yellow-400 text-black font-extrabold text-center transition-all flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Contratar Plan Ideal
+                    </a>
+                </div>
+
+                <!-- Plan Avanzado -->
+                <div class="bg-gray-900/80 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition-all hover:shadow-xl group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Plan Avanzado</span>
+                            <span class="bg-telecable-yellow/20 text-telecable-yellow font-extrabold text-[10px] px-2.5 py-1 rounded-full">+150 MB GRATIS</span>
+                        </div>
+                        <div class="mb-6">
+                            <div class="text-4xl font-black text-white group-hover:text-telecable-yellow transition-colors">750 <span class="text-xl font-bold text-gray-400">Mbps</span></div>
+                            <div class="text-sm text-telecable-red font-extrabold mt-1">+ TELEVISIÓN DIGITAL HD</div>
+                        </div>
+                        <div class="py-4 border-y border-gray-800 mb-6">
+                            <span class="text-xs text-gray-400 block">Precio Especial / mes</span>
+                            <div class="text-3xl font-black text-white">₡39.990 <span class="text-xs font-normal text-gray-400">i.i.</span></div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> Velocidad: 600MB + 150MB extra</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> Paquete de TV Premium Completo</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> App Gratis a elegir (TDMAX / ViX)</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-400"></i> Máxima potencia para hogares conectados</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20contratar%20el%20Plan%20Avanzado%20750Mbps%20%2B%20TV%20por%20₡39.990" 
+                       target="_blank" 
+                       class="w-full py-3.5 px-6 rounded-2xl bg-gray-800 hover:bg-telecable-red text-white font-bold text-center transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Contratar Plan Avanzado
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN APPS GRATIS (TDMAX / ViX PREMIUM) -->
+    <section id="apps" class="py-16 bg-gradient-to-r from-purple-950 via-gray-900 to-purple-950 border-y border-purple-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 text-center lg:text-left">
+                    <span class="text-telecable-yellow font-extrabold text-xs uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/30">Beneficio Incluido</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4">
+                        Con tu paquete de Internet <br>
+                        <span class="text-telecable-yellow">ELEGÍ GRATIS TU APP FAVORITA</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm mb-6">Disfruta el mejor entretenimiento deportivo, fútbol en vivo, películas y series exclusivas sin costo adicional con tu suscripción.</p>
+                    
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
+                        <div class="bg-purple-900/60 border border-purple-500/40 px-5 py-3 rounded-2xl flex items-center gap-3">
+                            <i class="fa-solid fa-tv text-telecable-yellow text-2xl"></i>
+                            <div class="text-left">
+                                <div class="font-extrabold text-white text-base">TDMAX</div>
+                                <div class="text-[11px] text-purple-200">Fútbol Nacional & Deportes HD</div>
+                            </div>
+                        </div>
+                        <div class="bg-purple-900/60 border border-purple-500/40 px-5 py-3 rounded-2xl flex items-center gap-3">
+                            <i class="fa-solid fa-film text-telecable-yellow text-2xl"></i>
+                            <div class="text-left">
+                                <div class="font-extrabold text-white text-base">ViX Premium</div>
+                                <div class="text-[11px] text-purple-200">Series, Novelas y Cine Exclusivo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20contratar%20un%20paquete%20y%20elegir%20mi%20app%20gratis" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-telecable-red hover:bg-red-700 text-white font-extrabold px-6 py-3 rounded-xl transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Reclamar App Gratis por WhatsApp
+                    </a>
+                </div>
+
+                <!-- App Graphic Card Feature -->
+                <div class="lg:col-span-6">
+                    <div class="bg-gray-900/90 rounded-3xl p-6 sm:p-8 border border-purple-500/30 text-center relative overflow-hidden shadow-2xl">
+                        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-telecable-red/20 rounded-full blur-2xl"></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Transmite en todos tus dispositivos</h3>
+                        <p class="text-xs text-gray-400 mb-6">Smart TV, Celulares, Tablets y Computadoras</p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800">
+                                <div class="text-telecable-yellow text-3xl font-black mb-1">TDMAX</div>
+                                <p class="text-[11px] text-gray-400">Liga Promérica, Torneos y Canal 7 en vivo</p>
+                            </div>
+                            <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800">
+                                <div class="text-purple-400 text-3xl font-black mb-1">ViX+</div>
+                                <p class="text-[11px] text-gray-400">Contenido original en español sin anuncios</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-[10px] text-gray-500 italic">*Promoción exclusiva para clientes nuevos. Válida según plan seleccionado.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES SOLO INTERNET -->
+    <section id="solo-internet" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-telecable-yellow font-extrabold text-xs uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/30">Fibra Óptica Pura</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">Planes Solo Internet</h2>
+                <p class="text-gray-400 text-base">Navega a máxima velocidad con conexión ultra estable y equipamiento de última tecnología.</p>
+            </div>
+
+            <!-- 5 Columns Horizontal Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                
+                <!-- Básico -->
+                <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">BÁSICO</span>
+                        <div class="text-3xl font-black text-white">150 <span class="text-sm font-normal text-gray-400">Mbps</span></div>
+                        <div class="mt-3 py-2 border-y border-gray-800">
+                            <div class="text-2xl font-extrabold text-telecable-yellow">₡22.990</div>
+                            <span class="text-[10px] text-gray-400">/ mes i.i.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20Plan%20Solo%20Internet%20Básico%20150Mbps%20por%20₡22.990" 
+                       target="_blank" 
+                       class="mt-6 w-full py-2.5 bg-gray-800 hover:bg-telecable-red text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp"></i> Contratar
+                    </a>
+                </div>
+
+                <!-- Estándar -->
+                <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">ESTÁNDAR</span>
+                        <div class="text-3xl font-black text-white">350 <span class="text-sm font-normal text-gray-400">Mbps</span></div>
+                        <div class="mt-3 py-2 border-y border-gray-800">
+                            <div class="text-2xl font-extrabold text-telecable-yellow">₡25.990</div>
+                            <span class="text-[10px] text-gray-400">/ mes i.i.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20Plan%20Solo%20Internet%20Estándar%20350Mbps%20por%20₡25.990" 
+                       target="_blank" 
+                       class="mt-6 w-full py-2.5 bg-gray-800 hover:bg-telecable-red text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp"></i> Contratar
+                    </a>
+                </div>
+
+                <!-- Ideal -->
+                <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">IDEAL</span>
+                        <div class="text-3xl font-black text-white">600 <span class="text-sm font-normal text-gray-400">Mbps</span></div>
+                        <div class="mt-3 py-2 border-y border-gray-800">
+                            <div class="text-2xl font-extrabold text-telecable-yellow">₡28.990</div>
+                            <span class="text-[10px] text-gray-400">/ mes i.i.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20Plan%20Solo%20Internet%20Ideal%20600Mbps%20por%20₡28.990" 
+                       target="_blank" 
+                       class="mt-6 w-full py-2.5 bg-gray-800 hover:bg-telecable-red text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp"></i> Contratar
+                    </a>
+                </div>
+
+                <!-- Avanzado (+ Extensor Wi-Fi) -->
+                <div class="bg-gray-900/90 p-5 rounded-2xl border border-telecable-purple flex flex-col justify-between hover:border-purple-400 transition-all relative">
+                    <span class="absolute -top-3 right-3 bg-telecable-purple text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full uppercase">INCLUYE EXTENSOR</span>
+                    <div>
+                        <span class="text-xs font-bold text-purple-300 uppercase tracking-wider block mb-1">AVANZADO</span>
+                        <div class="text-3xl font-black text-white">750 <span class="text-sm font-normal text-gray-400">Mbps</span></div>
+                        <p class="text-[10px] text-purple-300 font-bold mt-1">Incluye: Extensor Wi-Fi</p>
+                        <div class="mt-2 py-2 border-y border-gray-800">
+                            <div class="text-2xl font-extrabold text-telecable-yellow">₡31.990</div>
+                            <span class="text-[10px] text-gray-400">/ mes i.i.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20Plan%20Solo%20Internet%20Avanzado%20750Mbps%20por%20₡31.990" 
+                       target="_blank" 
+                       class="mt-6 w-full py-2.5 bg-telecable-purple hover:bg-purple-700 text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp"></i> Contratar
+                    </a>
+                </div>
+
+                <!-- Experto (+ eero 6+) -->
+                <div class="bg-gradient-to-b from-telecable-red/20 to-gray-900 p-5 rounded-2xl border-2 border-telecable-red flex flex-col justify-between hover:border-red-500 transition-all relative shadow-lg">
+                    <span class="absolute -top-3 right-3 bg-telecable-red text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full uppercase">eero 6+ MESH</span>
+                    <div>
+                        <span class="text-xs font-bold text-red-300 uppercase tracking-wider block mb-1">EXPERTO</span>
+                        <div class="text-3xl font-black text-white">1000 <span class="text-sm font-normal text-gray-400">Mbps</span></div>
+                        <p class="text-[10px] text-red-300 font-bold mt-1">Incluye: eero 6+ Mesh</p>
+                        <div class="mt-2 py-2 border-y border-gray-800">
+                            <div class="text-2xl font-extrabold text-telecable-yellow">₡39.990</div>
+                            <span class="text-[10px] text-gray-400">/ mes i.i.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20Plan%20Solo%20Internet%20Experto%201000Mbps%20por%20₡39.990" 
+                       target="_blank" 
+                       class="mt-6 w-full py-2.5 bg-telecable-red hover:bg-red-700 text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-1.5 shadow-md">
+                        <i class="fa-brands fa-whatsapp"></i> Contratar
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Adicionales Bar -->
+            <div class="mt-12 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 text-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">Servicios Adicionales Disponibles</span>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-300 font-semibold">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-telecable-yellow"></i> IP Fija</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-wifi text-telecable-yellow"></i> eero 6+ Mesh</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-play text-telecable-yellow"></i> ViX Premium</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-futbol text-telecable-yellow"></i> TDMAX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <a href="#" class="text-2xl font-extrabold italic tracking-wider">
+                        <span class="text-white">Tele</span><span class="text-telecable-red">cable</span>
+                    </a>
+                    <p class="text-xs text-gray-500 mt-2">© 2026 Telecable Costa Rica. Todos los derechos reservados.</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Aplica términos y condiciones. Promoción válida del 1 al 24 de Noviembre del 2026.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/50680000000" target="_blank" class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-emerald-400 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-telecable-yellow transition-colors">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/50680000000?text=Hola,%20vengo%20de%20la%20web%20de%20promociones%20y%20quiero%20más%20información" 
+       target="_blank" 
+       title="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 animate-pulse-slow">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white border border-telecable-yellow px-4 py-3 rounded-xl shadow-2xl hidden items-center gap-3">
+        <i class="fa-solid fa-circle-check text-telecable-yellow"></i>
+        <span id="toastMsg" class="text-xs font-semibold">¡Copiado al portapapeles!</span>
+    </div>
+
+    <!-- JAVASCRIPT CONTROLLERS -->
+    <script>
+        // Toggle Admin View Panel Simulator
+        function toggleAdminView() {
+            const adminPanel = document.getElementById('adminPanel');
+            const toggleText = document.getElementById('toggleText');
+            if (adminPanel.classList.contains('hidden')) {
+                adminPanel.classList.remove('hidden');
+                toggleText.innerText = 'Cerrar Admin';
+                adminPanel.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                adminPanel.classList.add('hidden');
+                toggleText.innerText = 'Modo Admin';
+            }
+        }
+
+        // Copy Template Text Helper
+        function copyToClipboard(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            
+            // execCommand fallback compatibility for sandbox iframe compatibility
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+
+            showToast("Plantilla copiada al portapapeles");
+        }
+
+        function copyAllTemplates() {
+            const t1 = document.getElementById('tpl1').innerText;
+            const t2 = document.getElementById('tpl2').innerText;
+            const t3 = document.getElementById('tpl3').innerText;
+            const fullText = `--- PLANTILLA 1 ---\n${t1}\n\n--- PLANTILLA 2 ---\n${t2}\n\n--- PLANTILLA 3 ---\n${t3}`;
+            
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = fullText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+
+            showToast("¡Todas las plantillas copiadas!");
+        }
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+
+        // Countdown Timer Logic
+        function startTimer() {
+            const targetDate = new Date("November 24, 2026 23:59:59").getTime();
+            
+            setInterval(() => {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerText = days.toString().padStart(2, '0');
+                    document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+                    document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+                    document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            startTimer();
+        };
+    </script>
+</body>
+</html>
